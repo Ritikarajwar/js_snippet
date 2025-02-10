@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo_list</title>
+</head>
+<style>
+    label {
+        font-weight: 600;
+        /* margin-left: 5%; */
+    }
+
+    input {
+        margin-top: 1%;
+    }
+
+    #inner {
+        /* border: 2px solid black; */
+        margin-top: 2%;
+        width: 50%;
+    }
+
+    #outer {
+        border: 2px solid black;
+        padding: 2%;
+        margin-top: 220px;
+        margin: auto;
+        width: 43%;
+    }
+
+    #submit {
+        color: white;
+        background-color: green;
+        height: 30px;
+        border-radius: 4%;
+        border: green;
+    }
+</style>
+
+<body>
+    <div id="outer">
+        <label for="task"> ENTER TASK...</label>
+        <br>
+        <input type="text" id="task" placeholder="enter your task">
+        <button id="submit" onclick="add_task()">
+            submit
+        </button>
+        <button id="submit" onclick="show_data()">
+            show existing data
+        </button>
+        <div id="inner"></div>
+    </div>
+</body>
+<script>
+
+    let div = document.querySelector('#inner');
+    let task = document.querySelector('#task');
+
+    function delete_task(val) {
+        let retString = localStorage.getItem("arr");
+        let retArray = JSON.parse(retString);
+        console.log(retArray)
+        console.log(val)
+        // localStorage.clear()
+
+        let new_arr = []
+        for (let i = 0; i < retArray.length; i++) {
+            if (retArray[i] !== val) {
+                new_arr.push(retArray[i])
+            } else { continue }
+        }
+        // console.log(new_arr)
+        saveTask('arr', new_arr)
+        renderTasks()
+    }
+
+
+    function add_task() {
+
+        let arr = JSON.parse(localStorage.getItem("arr")) || [];
+        if (task.value) {
+
+            arr.push(task.value);
+            renderTasks('arr', arr)
+
+            task.value = ''
+            // div.innerHTML = 'Added';
+            renderTasks()
+
+        } else {
+            div.innerHTML = 'enter task !!!';
+        }
+    }
+
+
+    function renderTasks() {
+        div.innerHTML = ''
+        let retString = localStorage.getItem("arr");
+        let retArray = JSON.parse(retString);
+
+        console.log(retArray.length)
+        if (retArray.length === 0) {
+            div.innerHTML = 'no task enter new task to proceed further'
+        } else {
+
+            for (let i = 0; i < retArray.length; i++) {
+
+                let inner_div = document.createElement('div');
+
+                let para = document.createElement('p')
+                let btn = document.createElement('button')
+                let checkbox = document.createElement('input')
+                checkbox.type = 'checkbox'
+                btn.innerHTML = 'delete';
+
+                para.textContent = retArray[i];
+                inner_div.appendChild(checkbox)
+                inner_div.appendChild(para)
+                inner_div.appendChild(btn)
+                div.appendChild(inner_div);
+
+                //------------------------- CSS-------------------------// 
+                inner_div.style.display = 'flex';
+                inner_div.style.justifyContent = 'space-evenly';
+                btn.style.height = '30px';
+                btn.style.marginTop = '9px';
+                btn.style.borderRadius = '5px';
+                btn.style.background = 'red';
+                btn.style.color = 'white';
+                btn.style.border = 'red';
+
+                //--------------------------css------------------------//
+                checkbox.onchange = () => {toggleTask()}
+                btn.onclick = () => { delete_task(retArray[i]) }
+            }
+        }
+    }
+    renderTasks();
+
+    function toggleTask() {
+        if (checkbox.checked) {
+            para.style.textDecoration = "line-through"
+        } else {
+            para.style.textDecoration = "none"
+        }
+    }
+
+    function saveTask(arr_name, array) {
+        localStorage.setItem(arr_name, JSON.stringify(array))
+    }
+</script>
+
+</html>
