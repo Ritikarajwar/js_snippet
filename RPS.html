@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #outer {
+        width: 42%;
+        height: 60px;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-evenly;
+        background-color: lightcoral;
+        align-items: center;
+        border-radius: 10px;    
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+    
+    }
+
+    .inner {
+        /* border: 1px solid black; */
+        padding: 2%;
+        background-color: lightblue;
+        border-radius: 15%;
+    }
+
+    .middle {
+        /* border: 1px solid black; */
+        width: 40%;
+        height: 90px;
+        text-align: center;
+        font-size: 50px;
+    }
+    .bottom {
+    width: 40%;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightcoral;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+</style>
+
+<body>
+    <div id="outer">
+        <div class="inner" id="rock" onclick="rock_paper_scissor('rock')">rock</div>
+        <div class="inner" id="paper" onclick="rock_paper_scissor('paper')">paper</div>
+        <div class="inner" id="scissors" onclick="rock_paper_scissor('scissors')">scissors</div>
+    </div>
+    <div class="middle" id="middle"></div>
+    <div class="bottom">computer side </div>
+</body>
+<script>
+    let middle = document.querySelector('#middle');
+    let rock = document.querySelector('#rock').innerHTML;
+    let paper = document.querySelector('#paper').innerHTML;
+    let scissors = document.querySelector('#scissors').innerHTML;
+    let bottom = document.querySelector('.bottom');
+
+
+    function rock_paper_scissor(player) {
+        console.log("player: " ,player)
+        let arr = ['rock', 'paper', 'scissors']
+        let comp = arr[Math.floor(Math.random() * 3)];
+        console.log("comp : ",comp)
+        bottom.innerHTML = comp
+
+        if (comp == player) {
+            middle.innerHTML = 'T I E';
+        }
+        else if (player == rock && comp == paper) {
+            middle.innerHTML = 'computer win';
+        }
+        else if (player == paper && comp == scissors) {
+            middle.innerHTML = 'computer win';
+        }
+        else {
+            middle.innerHTML = 'player win';
+        }
+    }
+
+</script>
+
+</html>
