@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Notepad</title>
+    <style>
+        .parent {
+            border: 2px solid black;
+            width: 70%;
+            text-align: center;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .upper {
+            display: flex;
+            margin-top: 3%;
+            justify-content: space-evenly;
+        }
+
+        #display {
+            border: 1px solid black;
+            width: 90%;
+            height: 280px;
+            padding: 10px;
+            margin-top: 1%;
+            margin-left: 4%;
+            font-size: 16px;
+            color: black;
+            text-align: left;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent" style="font-size: 35px;font-weight: 600;">
+        NOTEPAD
+        <div class="upper" style="font-size: 25px; font-weight: 400;">
+            <div>
+                <label for="font"> Font</label>
+                <select id="font" onchange="showSelected()">
+                    <option value="10px">10</option>
+                    <option value="20px">20</option>
+                    <option value="30px">30</option>
+                    <option value="40px">40</option>
+                    <option value="50px">50</option>
+                    <option value="60px">60</option>
+                    <option value="70px">70</option>
+                    <option value="80px">80</option>
+                    <option value="90px">90</option>
+                    <option value="100px">100</option>
+                </select>
+            </div>
+            <div>
+                <label for="color">Text Color</label>
+                <select id="color" onchange="showSelected()">
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="pink">Pink</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="orange">Orange</option>
+                </select>
+            </div>
+            <div>
+                <label for="bgcolor">Background Color</label>
+                <select id="bgcolor" onchange="showSelected()">
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="pink">Pink</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="orange">Orange</option>
+                </select>
+            </div>
+            <div>
+                <button id="replace" onclick="Replace()" style="padding: 15%;">Replace</button>
+            </div>
+            <div>
+                <button id="find" onclick="find_all()" style="padding: 25%;">Find</button>
+            </div>
+            <div>
+                <button id="find" onclick="find_next()" style="padding: 25%;">Find Next</button>
+            </div>
+        </div>
+        <div id="display" contenteditable="true" placeholder="Type here..."></div>
+    </div>
+
+    <script>
+        function showSelected() {
+            let size = document.querySelector('#font');
+            let color = document.querySelector('#color');
+            let bgcolor = document.querySelector('#bgcolor');
+            let display = document.querySelector('#display');
+
+            display.style.fontSize = size.value;
+            display.style.color = color.value;
+            display.style.backgroundColor = bgcolor.value;
+        }
+
+        function Replace() {
+            let display = document.querySelector('#display');
+            let inp = prompt('Enter word to replace...');
+            let inp2 = prompt('Enter replacement word...');
+
+            display.innerHTML = display.innerHTML.replaceAll(inp, inp2);
+
+        }
+
+        function find_all() {
+            let display = document.querySelector('#display');
+            let inp = prompt('Enter word to find...');
+            let position = []
+
+            for (let i = 0; i < display.innerHTML.length; i++) {
+                if (display.innerHTML.indexOf(inp, i) >= 0 && i == display.innerHTML.indexOf(inp, i)) {
+                    position.push(i)
+                }
+            }
+            console.log(position)
+            display.innerHTML = display.innerHTML.replaceAll(inp, `<mark>${inp}</mark>`)
+        }
+
+        function find_next() {
+            let display = document.querySelector('#display');
+            let inp = prompt('Enter word to find...')
+            let i;
+            for ( i = 0; i < display.innerHTML.length; i++) {
+                display.innerHTML = display.innerHTML.replace(inp, `<mark>${inp}</mark>`)   
+                mini(inp);            
+            }
+            function mini(inp) {
+                let inp2 = prompt('Enter replacement word...');
+            display.innerHTML = display.innerHTML.replace(inp, inp2);
+            i = i+inp.length;
+            }
+            
+        }
+        
+
+
+    </script>
+</body>
+
+</html>
