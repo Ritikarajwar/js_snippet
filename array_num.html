@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" cellspacing='0' cellpadding='10'>
+        <!-- Arranging a 1D array so that all negative numbers appear before positive numbers
+                while maintaining the order of appearance. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Arranging a 1D array so that all negative numbers appear before positive numbers
+                while maintaining the order of appearance.
+            </td>
+            <td>
+                <button onclick="neg_pos()">
+                    show result
+                </button>
+            </td>
+            <td align="center">
+                result
+            </td>
+        </tr>
+        <!-- Arranging an array so that all odd numbers appear first, followed by even
+                numbers, while maintaining relative order. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Arranging an array so that all odd numbers appear first, followed by even
+                numbers, while maintaining relative order.
+            </td>
+            <td>
+                <button onclick="eve_odd()">
+                    show result
+                </button>
+            </td>
+            <td rowspan="20" width="100px" id="result">
+            </td>
+        </tr>
+        <!-- Calculate the average of all elements in an array.
+            </td> -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Calculate the average of all elements in an array.
+            </td>
+            <td>
+                <button onclick="avg()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Reverse the elements of an array (e.g., [1,2,3,4,5] becomes [5,4,3,2,1]). -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Reverse the elements of an array (e.g., [1,2,3,4,5] becomes [5,4,3,2,1]).
+            </td>
+            <td>
+                <button onclick="reverse()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Count the frequency of even and odd numbers in an array. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Count the frequency of even and odd numbers in an array.
+            </td>
+            <td>
+                <button onclick="fequency_of_odd_eve()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Find the largest element in an array of N numbers. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Find the largest element in an array of N numbers.
+            </td>
+            <td>
+                <button onclick="max()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Finding the maximum element in each column of a 2D array of size MxN. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Finding the maximum element in each column of a 2D array of size MxN.
+            </td>
+            <td>
+                <button onclick="max_element_of_each_column_2D()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Calculate the sum of elements in each row of a matrix of size MxN. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Calculate the sum of elements in each row of a matrix of size MxN.
+            </td>
+            <td>
+                <button onclick="sum_of_element_in_each_row()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Print the sum of all even numbers in a 2d array of 8x5. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Print the sum of all even numbers in a 2d array of 8x5.
+            </td>
+            <td>
+                <button onclick="sum_of_even_in_2D()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Print the diagonal elements of a square matrix of size NxN. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Print the diagonal elements of a square matrix of size NxN.
+            </td>
+            <td>
+                <button onclick="diagonal_element()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Print the transpose of a given 2D matrix of size MxN. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Print the transpose of a given 2D matrix of size MxN.
+            </td>
+            <td>
+                <button onclick="transpose()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- saddle point -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Identifying all saddle points in a 2D array of size MxN (a saddle point is an
+                element that is the smallest in its row but the largest in its column, or vice versa).
+            </td>
+            <td>
+                <button onclick="">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- Find all unique elements in a 2D array. -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Find all unique elements in a 2D array.
+            </td>
+            <td>
+                <button onclick="unique_element_in_2D()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- frequency of a specific number in a 2D array  -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Counting the frequency of a specific number in a 2D array of size MxN.
+            </td>
+            <td>
+                <button onclick="frequency_of_specific_element()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- magic square -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                Checking if a given 2D array of size MxN is a magic square (i.e., all rows,
+                columns, and diagonals have the same sum).
+            </td>
+            <td>
+                <button onclick="">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!--  -->
+        <tr>
+            <td>
+                Task:
+            </td>
+            <td>
+                entering number in spiral method
+            </td>
+            <td>
+                <button onclick="spiral()">
+                    show result
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    let result = document.querySelector('#result');
+
+    function spiral() {
+        let dimenssion = Number(prompt('enter dimension:'))
+        let num = Number(prompt('enter initial value:'))
+        // console.log(CallSpiral(dimenssion, num))
+        let arr = PrintSpiral(dimenssion, num)
+        result.innerHTML = print_matrix(arr)
+    }
+
+    
+function PrintSpiral(dimenssion, num) {
+    let mat = CallSpiral(dimenssion, num);
+    function CallSpiral(dimenssion, num) {
+
+        // return
+        matrix = [];
+
+        for (let i = 0; i < dimenssion; i++) {
+            matrix[i] = []
+        }
+        // console.log(matrix)
+        let lr = 0;
+        let tb = dimenssion;
+        let rl = dimenssion;
+        let bt = dimenssion;
+
+
+        for (let k = 0; k <= Math.floor(dimenssion / 2); k++) {
+            num = printLr(k, rl - k, num);
+            // console.log(num)
+            num = printTb(k, tb - k, num);
+            num = printRl(k, tb - k, num)
+            num = printBt(k, bt - k, num)
+        }
+        return matrix;
+
+    }
+
+    function printLr(k, rl, num) {
+        for (let i = k; i < rl; i++) {
+            matrix[k][i] = num
+            num++;
+        }
+        num--
+        return num;
+    }
+    function printTb(k, tb, num) {
+        for (let i = k; i < tb; i++) {
+            matrix[i][tb - 1] = num
+            num++;
+        }
+        num--
+        return num;
+    }
+    function printRl(k, tb, num) {
+        for (let i = tb - 1; i >= k; i--) {
+            matrix[tb - 1][i] = num;
+            num++;
+        }
+        num--
+        return num
+    }
+    function printBt(k, bt, num) {
+        for (let i = bt - 1; i >= k + 1; i--) {
+            matrix[i][k] = num;
+            num++;
+        }
+        return num;
+
+    }
+    return mat;
+}
+    function input_matrix() {
+        let arr = [];
+        let row = Number(prompt('enter row : '));
+        let col = Number(prompt('enter column: '));
+        // console.log(row, col)
+        for (let i = 0; i < row; i++) {
+            arr[i] = []
+            for (let j = 0; j < col; j++) {
+                let value = prompt(`enter  value [${i}][ ${j}]`);
+                arr[i][j] = Number(value);
+            }
+        }
+        // console.log(arr);
+        return arr;
+    }
+
+    function print_matrix(arr) {
+
+        let matrix = '';
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                matrix = matrix + arr[i][j]
+
+            }
+            matrix = matrix + '</br>'
+        }
+        return matrix;
+    }
+
+    // function unique_element_in_2D() {
+    //     let arr = input_matrix()
+    //     let uniqueElements = [];
+    //     for (let i = 0; i < arr.length; i++) {
+    //         for (let j = 0; j < arr[i].length; j++) {
+    //             let element = arr[i][j];
+    //             if (uniqueElements.includes(element) == false) {
+    //                 uniqueElements.push(element);
+    //             }
+    //         }
+    //     }
+    //     let obj = {};
+    //     for (let index = 0; index < uniqueElements.length; index++) {
+    //         let count = 0;
+    //         for (let i = 0; i < arr.length; i++) {
+    //             for (let j = 0; j < arr[i].length; j++) {
+    //                 if (uniqueElements[index] == arr[i][j]) {
+    //                     count = count + 1;
+    //                 }
+    //             }
+    //         }
+    //         if (obj[uniqueElements[index]] == undefined) {
+    //             obj[uniqueElements[index]] = count
+    //         }
+    //     }
+    //     console.log(obj)
+    //     let uni = ''
+    //     for (const key in obj) {
+    //         if (obj[key] == 1) {
+    //             console.log(key)
+    //             uni = uni + key
+    //         }
+    //     }
+    //     let uni_split = uni.split('')
+    //     console.log(uni_split)
+    //     result.innerHTML = "matrix:" + "<br>" + arr + '<br>' + 'unique element = ' + uni_split;
+    // }
+    function unique_element_in_2D(){
+        let arr = input_matrix();
+        let x =  CallInputUniq(arr)
+        console.log(x)
+        result.innerHTML = print_matrix(x.matrix) + '<br>'+ 'unique elements: '+ x.uniqueElements;
+    }
+
+    function frequency_of_specific_element() {
+        let arr = input_matrix();
+        console.log(arr)
+        let num = Number(prompt('enter number to check frequency:'));
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[i][j] == num) {
+                    count = count + 1;
+                }
+
+            }
+        }
+        result.innerHTML = print_matrix(arr) + "<br>" + num + " : " + count;
+    }
+
+    function transpose() {
+        let arr = input_matrix();
+        console.log(arr);
+        let res = '';
+        for (let i = 0; i < arr.length; i++) {
+            let str = '';
+            for (let j = 0; j < arr.length; j++) {
+                str = str + ' ' + arr[j][i] + ' '
+
+            }
+            console.log(str)
+            res = res + str + '<br>';
+        }
+        let out = print_matrix(arr);
+        result.innerHTML = 'original: ' + '<br>' + out + '<br>' + 'transpose' + '<br>' + res;
+    }
+
+    function diagonal_element() {
+        let arr = input_matrix();
+        console.log(arr)
+        let element = [];
+        let k = arr.length - 1;
+        for (let i = 0; i < arr.length; i++) {
+            element.push(arr[i][i]);
+            element.push(arr[i][k]);
+            k = k - 1;
+        }
+        console.log(element)
+    }
+
+    function sum_of_even_in_2D() {
+        let arr = input_matrix();
+        let sum = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[i][j] % 2 == 0) {
+                    sum = sum + arr[i][j]
+                }
+            }
+        }
+        let out_matrix = print_matrix(arr);
+        result.innerHTML = out_matrix + '<br>' + "sum :" + sum;
+
+    }
+
+    function sum_of_element_in_each_row() {
+        let arr = input_matrix();
+        // console.log(arr);
+        let ans = ''
+        for (let i = 0; i < arr.length; i++) {
+            let sum = 0;
+            for (let j = 0; j < arr.length; j++) {
+                sum = sum + arr[j][i];
+
+            }
+            ans = ans + 'col ' + (i + 1) + ': ' + sum + '<br>';
+            // console.log(sum);
+        }
+        let out_matrix = print_matrix(arr);
+        result.innerHTML = out_matrix + '<br>' + ans;
+
+    }
+
+    function neg_pos() {
+        let arr = [];
+        for (let i = 0; i < 6; i++) {
+            let input = prompt("Enter numbers:");
+            arr.push(input);
+        }
+        console.log(arr)
+        let new_ar = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                new_ar.push(arr[i])
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 0) {
+                new_ar.push(arr[i])
+            }
+        }
+        console.log(new_ar);
+        result.innerHTML = 'input array: ' + arr + '<br>' + 'output array: ' + new_ar;
+    }
+
+    function eve_odd() {
+        let arr = [];
+        for (let i = 0; i < 6; i++) {
+            let input = prompt("Enter numbers:");
+            arr.push(input);
+        }
+        console.log(arr)
+        let new_ar = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+                new_ar.push(arr[i])
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                new_ar.push(arr[i])
+            }
+        }
+        console.log(new_ar);
+        result.innerHTML = 'input array: ' + arr + '<br>' + 'output array: ' + new_ar;
+    }
+
+    function avg() {
+        let arr = [];
+        for (let i = 0; i < 6; i++) {
+            let input = Number(prompt("Enter numbers:"));
+            arr.push(input);
+        }
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum = sum + arr[i]
+        }
+        let avg = sum / arr.length
+        // console.log(avg)
+        result.innerHTML = 'input arr: ' + arr + '<br>' + 'avg :' + avg;
+    }
+
+    function reverse() {
+        let arr = []
+        for (let i = 0; i < 6; i++) {
+            let input = prompt("enter number: ");
+            arr.push(input);
+        }
+        console.log(arr)
+        let rev = []
+        for (let i = arr.length - 1; i >= 0; i--) {
+            rev.push(arr[i])
+        }
+        console.log(rev)
+        result.innerHTML = 'input arr: ' + arr + '<br>' + 'avg :' + rev;
+    }
+
+    function fequency_of_odd_eve() {
+        let arr = []
+        for (let i = 0; i < 6; i++) {
+            let inp = prompt("enter number: ");
+            arr.push(inp)
+        }
+        console.log(arr)
+        let e_count = 0;
+        let o_count = 0
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                e_count = e_count + 1;
+            }
+            else {
+                o_count = o_count + 1;
+            }
+        }
+        result.innerHTML = 'input arr: ' + arr + '<br>' + 'even count :' + e_count + 'odd count :' + o_count;
+    }
+
+    function max() {
+        let arr = []
+        for (let i = 0; i < 6; i++) {
+            let inp = prompt("enter number: ");
+            arr.push(inp)
+        }
+        console.log(arr)
+        let max = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+
+        }
+        result.innerHTML = 'input arr: ' + arr + '<br>' + 'max element :' + max;
+    }
+
+    function max_element_of_each_column_2D() {
+        let arr = input_matrix();
+        console.log(arr)
+
+        result.innerHTML = ''
+        let text = '';
+        for (let i = 0; i < arr.length; i++) {
+            let max = 0;
+            for (let j = 0; j < arr.length; j++) {
+                if (max < arr[j][i]) {
+                    max = arr[j][i]
+                }
+            }
+            text = text + 'col' + i + 1 + ' : ' + max + '</br>';
+            // console.log('col'+i+' : '+ max);
+        }
+        result.innerHTML = text;
+    }
+
+
+
+
+
+</script>
+
+</html>
