@@ -1,0 +1,236 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" cellspacing='0' cellpadding='10'>
+        <tr>
+            <td>
+                Ques1:
+            </td>
+            <td>
+                Calculate Age from a Given Date
+                <input type="date" id="input11">
+            </td>
+            <td>
+                <button onclick="call_age(input11.value)">
+                    show result
+                </button>
+            </td>
+            <td align="center">
+                Result
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques2:
+            </td>
+            <td>
+                Days Between Two Dates
+                <input type="date" id="input12">
+                <input type="date" name="" id="input13">
+            </td>
+            <td>
+                <button onclick="call_day_diff(input12.value,input13.value)">
+                    show result
+                </button>
+            </td>
+            <td rowspan="20" width="100px" id="result">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques3:
+            </td>
+            <td>
+                Get Day of the Week from a Date
+                <input type="date" id="input14">
+            </td>
+            <td>
+                <button onclick="call_day_of_week(input14.value)">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques4:
+            </td>
+            <td>
+                Check if a Year is a Leap Year
+                <input type="date" id="input15">
+            </td>
+            <td>
+                <button onclick="call_leap_year(input15.value)">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques5:
+            </td>
+            <td>
+                Make a label in the form which shows Current Date and Current Time
+            </td>
+            <td>
+                <button onclick="call_cur_date_time()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques6:
+            </td>
+            <td>
+                Make a form where you give options to user to format date
+                <select name="" id="format">
+                    <option value="DD-MM-YYYY">DD-MM-YYYY</option>
+                    <option value="DD MONTH YYYY">DD MONTH YYYY</option>
+                    <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                    <option value="DD-M-YY">DD-M-YY</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="call_show_date(format.value)">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques7:
+            </td>
+            <td>
+                Calculate new Date
+                <input type="number" name="" id="days">
+            </td>
+            <td>
+                <button onclick="call_new_date(days.value)">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques8:
+            </td>
+            <td>
+                Check if Date is valid or not .
+            </td>
+            <td>
+                <button onclick="call_check_date()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques9:
+            </td>
+            <td>
+                Write a Program to Check if a Date Falls on a Weekend
+                <input type="date" id="input16">
+            </td>
+            <td>
+                <button onclick="call_weekend_or_not(input16.value)">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td>
+                Ques10:
+            </td>
+            <td>
+                Write a function to check if two dates ranges overlap
+            </td>
+            <td>
+                <button onclick="isOverlapping(range1,range2)">
+                    show result
+                </button>
+            </td>
+        </tr> -->
+    </table>
+    <script src="Ritika.js"></script>
+</body>
+<script>
+    let result = document.querySelector('#result');
+
+    function call_check_date() {
+        let day = Number(prompt("enter day:"))
+        let month = Number(prompt("enter month:"))
+        let year = Number(prompt("enter year:"))
+        let check = check_date(day, month, year)
+        // console.log(check)
+        result.innerHTML = check;
+    }
+
+    function call_weekend_or_not(inp) {
+        const nationalHolidays = [
+        "2025-01-26",
+        "2025-08-15",
+        "2025-10-02",
+        "2025-05-01",
+        "2025-12-25",
+        "2025-01-14",
+        "2025-12-24",
+        "2025-07-01",
+        "2025-11-11"];
+        let a = weekend_or_not(nationalHolidays,inp)
+        result.innerHTML = a;
+    }
+
+    function call_new_date(days) {
+        let new_d = new_date(days)
+        result.innerHTML = new_d;
+    }
+
+    function call_show_date(format) {
+        let x = show_date(format)
+        // console.log(x)
+        result.innerHTML = x;
+    }
+
+    function call_age(date) {
+        let x = age(date);
+        // console.log(x)
+        result.innerHTML = x;
+    }
+
+    function call_day_diff(date1, date2) {
+        // let x = day_diff(date1, date2)
+        // console.log(x)
+        result.innerHTML = day_diff(date1, date2);
+    }
+
+    function call_day_of_week(date) {
+        let x = day_of_week(date);
+        console.log(x)
+    }
+
+    function call_leap_year(year) {
+        let x = leap_year(year)
+        // console.log(x)
+        result.innerHTML = x;
+    }
+
+    function call_cur_date_time() {
+        // result.innerHTML = cur_date_time();
+        cur_date_time((updatedTime) => {
+            result.innerHTML = updatedTime
+        })
+    }
+
+
+</script>
+
+
+</html>
