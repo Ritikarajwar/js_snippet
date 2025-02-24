@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" cellspacing='0' cellpadding='10'>
+        <tr>
+            <td>
+                Ques1:
+            </td>
+            <td>
+                <!-- Write a program to extract Words which are more than 5 characters in length -->
+                print number at odd position
+            </td>
+            <td>
+                <button onclick="call_odd_position()">
+                    show result
+                </button>
+            </td>
+            <td align="center">
+                Result
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques2:
+            </td>
+            <td>
+                Write a program to remove null/undefined/0/false/Nan etc words
+            </td>
+            <td>
+                <button onclick="call_words_len()">
+                    show result
+                </button>
+            </td>
+            <td rowspan="20" width="100px" id="result">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques3:
+            </td>
+            <td>
+                Suppose you have an object called Product which has name and price.
+                Now extract those products which are more than Rs4000
+            </td>
+            <td>
+                <button onclick="">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques4:
+            </td>
+            <td>
+                Suppose you have an array of cities , now you have to extract those cities in which "NEW" word is there
+                like new jersey, new york etc
+            </td>
+            <td>
+                <button onclick="">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques5:
+            </td>
+            <td>
+                Imagine you have a list of user objects, and you need to extract only the email addresses to display
+                them on a website:
+            </td>
+            <td>
+                <button onclick="f1()">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques6:
+            </td>
+            <td>
+                If you have an array of numbers and you want to square each number, map() allows you to do this
+                concisely:
+
+            </td>
+            <td>
+                <button onclick="">
+                    show result
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ques7:
+            </td>
+            <td>
+                Write a program to Extract Specific Properties from Objects in Arrays
+            </td>
+            <td>
+                <button onclick="f2()">
+                    show result
+                </button>
+            </td>
+        </tr>
+    </table>
+
+
+    <script type="module">
+        import show_email from "./ritika_imp_exp.js";
+        import do_square from "./ritika_imp_exp.js";
+
+        function f1() {
+            const users = [
+                { name: "Aditya", email: "aditya@example.com" },
+                { name: "Ritika", email: "ritika@example.com" },
+                { name: "Amit", email: "amit@example.com" },
+                { name: "Neha", email: "neha@example.in" },
+                { name: "Raj", email: "raj@example.com" }
+            ];
+            result.innerHTML = show_email(users).join("<br>");
+        }
+        window.f1 = f1;
+
+        function f2(){
+            console.log(do_square([1,2,3,4,5]))
+        }
+        window.f2 = f2;
+
+    </script>
+    <!-- <script src="ritika_namespace.js"></script> -->
+</body>
+
+</html>
